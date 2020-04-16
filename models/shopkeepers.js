@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 const shopSchema=new mongoose.Schema({
     skeeperName:String,
     gender:String,
-    dob:Number,
+    dob:String,
     address:String,
     pincode:Number,
     place:String,
