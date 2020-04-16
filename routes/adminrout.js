@@ -19,7 +19,7 @@ routers.post('/adminlogin',(req,res)=>{
     try {
         var searchuser=req.body.usern;
         var searchpassword= req.body.pass;
-        regmodel.find({
+        adminmodel.find({
             $and:[
                 {
                     "adminUsername":searchuser
