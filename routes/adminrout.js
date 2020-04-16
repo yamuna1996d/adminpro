@@ -1,6 +1,6 @@
 var express = require('express');
 var {adminmodel}= require('../models/adminmodel');
-var {shopmodel}= require('../models/adminmodel');
+var {shopmodel}= require('../models/shopkeepers');
 const routers=express.Router();
 routers.get('/',(req,res)=>{
     res.send('Hai');
