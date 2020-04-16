@@ -45,7 +45,7 @@ routers.post('/adminlogin',(req,res)=>{
         res.status(500).send(error);
     }
 });
-routers.post('/shopkeeper',(res,req)=>{
+routers.post('/shopkeeper',async(res,req)=>{
     try {
         var data= new shopmodel(req.body);
         var result= await data.save();
