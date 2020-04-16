@@ -22,10 +22,10 @@ routers.post('/adminlogin',(req,res)=>{
         regmodel.find({
             $and:[
                 {
-                    "adminusername":searchuser
+                    "adminUsername":searchuser
                 },
                 {
-                    "adminpass":searchpassword
+                    "adminPassword":searchpassword
                 }
             ]
         },(error,data)=>{
