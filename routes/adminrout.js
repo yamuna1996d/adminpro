@@ -45,7 +45,7 @@ routers.post('/adminlogin',(req,res)=>{
         res.status(500).send(error);
     }
 });
-routers.post('/shopkeeper',async(res,req)=>{
+routers.post('/shopkeeper',async(req,res)=>{
     try {
         var data= new shopmodel(req.body);
         var result= await data.save();
@@ -55,5 +55,8 @@ routers.post('/shopkeeper',async(res,req)=>{
         console.log(error);
         res.status(500).send(error);
     }
+});
+routers.get('/view',(req,res)=>{
+     
 });
 module.exports = routers
