@@ -11,5 +11,5 @@ const shopSchema=new mongoose.Schema({
     username:String,
     pass:String
 });
-var shopmodel=mongoose.model('shops',shopSchema);
+const shopmodel=mongoose.model('shops',shopSchema);
 module.exports= {shopmodel}
