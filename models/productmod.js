@@ -10,5 +10,5 @@ const productSchema=new mongoose.Schema({
     retailPrice:Number,
     gst:Number
 });
-const promodel=mongoose.model('shops',productSchema);
+const promodel=mongoose.model('products',productSchema);
 module.exports= {promodel}
