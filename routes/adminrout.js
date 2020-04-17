@@ -1,6 +1,7 @@
 var express = require('express');
 var {adminmodel}= require('../models/adminmodel');
 var {shopmodel}= require('../models/shopkeepers');
+var {promodel} = require('../models/productmod')
 const routers=express.Router();
 routers.get('/',(req,res)=>{
     res.send('Hai');
@@ -48,6 +49,17 @@ routers.post('/adminlogin',(req,res)=>{
 routers.post('/shopkeeper',async(req,res)=>{
     try {
         var data= new shopmodel(req.body);
+        var result= await data.save();
+        res.json(result);
+    } 
+    catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+});
+routers.post('/addpdt',async(req,res)=>{
+    try {
+        var data= new promodel(req.body);
         var result= await data.save();
         res.json(result);
     } 
