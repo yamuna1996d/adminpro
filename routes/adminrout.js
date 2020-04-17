@@ -68,7 +68,7 @@ routers.post('/addpdt',async(req,res)=>{
         res.status(500).send(error);
     }
 });
-routers.get('/view',(req,res)=>{
+// routers.get('/view',(req,res)=>{
      
-});
+// });
 module.exports = routers
