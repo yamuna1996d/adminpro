@@ -68,7 +68,52 @@ routers.post('/addpdt',async(req,res)=>{
         res.status(500).send(error);
     }
 });
-// routers.get('/view',(req,res)=>{
-     
-// });
+routers.get('/view',async(req,res)=>{
+    try {
+        var result=await promodel.find();
+        res.send(result);
+    } 
+    catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+        
+    }
+});
+routers.post('/search',async(req,res)=>{
+    try {
+        promodel.find(req.body,(error,data)=>{
+            if(error){
+                throw error;
+            }
+            else{
+                res.send(data);
+            }
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+});
+routers.post('/updatepro',(req,res)=>{
+    try {
+        promodel.findOneAndUpdate({
+            sellerName:req.body.sellerName
+        },
+        req.body,
+        (error,data)=>{
+            if (error) {
+                res.json({
+                    "status":"error"
+                });
+            } else {
+                res.json({
+                    "status":"Success"
+                });
+            }
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+});
 module.exports = routers
